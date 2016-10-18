@@ -37,10 +37,20 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
+  .state('app.bebidas' , {
+      url : '/bebidas',
+      views: {
+        'menuContent' : {
+            templateUrl : 'templates/bebidas.html',
+            controller : 'BebidasCtrl'         
+        }
+      }
+  })
+
   .state('app.search', {
     url: '/search',
     views: {
-      'menuContent': {
+      'menuContent' : {
         templateUrl: 'templates/search.html'
       }
     }
