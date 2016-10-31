@@ -47,6 +47,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
 
+  .state('app.petiscos', {
+      url: '/petiscos',
+      views : {
+        'menuContent' : {
+            templateUrl : 'templates/petiscos.html',
+            controller : 'PetiscosCtrl'
+        }
+      }
+  })
+
   .state('app.search', {
     url: '/search',
     views: {

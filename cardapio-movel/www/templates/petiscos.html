@@ -1,0 +1,9 @@
+<ion-view title="Petiscos">
+	<ion-content>
+	    <ion-list>
+		     <ion-item ng-repeat="petisco in peticos" href="#/app/petisco/{{petisco.id}}">
+	        	{{petisco.nome}} - R$ {{petisco.preco}}
+	     	 </ion-item>
+	    </ion-list>
+    </ion-content>
+</ion-view>
