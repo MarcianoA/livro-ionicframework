@@ -57,6 +57,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
 
+  .state('app.detalhar', {
+      url: '/detalhar/:itemID',
+      views : {
+        'menuContent' : {
+            templateUrl : 'templates/detalhe-item.html',
+            controller : 'DetalharCtrl'
+        }
+      }
+  })
+
   .state('app.search', {
     url: '/search',
     views: {
