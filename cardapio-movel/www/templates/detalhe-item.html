@@ -2,15 +2,18 @@
   <ion-content>
   	<div class="card">
   		<div class="item">
-  			<p>Titulo do Item</p>
-  			<img src="http://www.abgsolucoes.com.br/publico/noimage.png" width="100%">
+  			<h1>{{item.nome}}</h1>
+  			<!-- <img src="http://www.abgsolucoes.com.br/publico/noimage.png" width="100%"> -->
+        <div class="card">
+          <img class="centralizar-imagem margem-imagem" src="{{item.imagem}}" width="60%">
+        </div>
   			<p>Descrição:</p>
   			<div class="item item-text-wrap">
   				<p>
-  				Aqui, alguma descrição.
+  				{{item.descricao}}
   				</p>
   			</div>
-  			<p>Preço: R$ XX,XX</p>
+  			<p>Preço: R$ {{item.preco}}</p>
   		</div>
     </div>
     <div class="item">

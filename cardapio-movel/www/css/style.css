@@ -5,3 +5,11 @@
 .txt-espaco{
 	margin: 70px 0 70px 0 !important;
 }
+
+.centralizar-imagem{
+	margin-left: 20%;
+}
+
+.margem-imagem{
+	padding:1em;
+}
