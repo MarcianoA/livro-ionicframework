@@ -5,8 +5,8 @@ app.service('CardapioServices', function(){
 			'imagem' : 'img/garrafas.png', 'descricao':'Vinho tinto seco, da região Sul do país.'},
 		{'nome': 'Cerveja Especial', 'id' : 2, 'preco' : '23,00', 
 			'imagem' : 'img/cerveja.png', 'descricao':'Cerveja elaborada artesanalmente com um toque frutado.'},
-		{'nome': 'Wisky 18 anos', 'id' : 3, 'preco' : '200,00',
-		'imagem' : 'img/wisky.png', 'descricao':'Wisky de fabricação Russa.' }
+		{'nome': 'Whisky 18 anos', 'id' : 3, 'preco' : '200,00',
+		'imagem' : 'img/whisky.png', 'descricao':'Whisky de fabricação Russa.' }
 	];
 	//Mock Petiscos
 	var petiscos = [
