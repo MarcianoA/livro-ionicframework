@@ -13,3 +13,7 @@
 .margem-imagem{
 	padding:1em;
 }
+
+.color-canDown-true, .color-canUp-true{
+  background-color: #eeeeee !important;
+}
