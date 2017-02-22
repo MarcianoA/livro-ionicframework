@@ -59,30 +59,47 @@
         <ion-content>
         <div class="card">
           <div class="item txt-centralizado">
-            <p>Quant - Item - Valor</p>
-            <ion-list ng-repeat="it in bandeja">
             <div class="row">
-                <div class="">
+                <div class="col">
+                  Quantidade
+                </div>
+                <div class="col">
+                  Item
+                </div>
+                <div class="col">
+                  Valor
+                </div>
             </div>
-
-              <ion-radio ng-model="filter.red">{{it.quantidade}} {{it.item.nome}} (s) - {{it.valor}}</ion-radio>
+            <ion-list ng-repeat="it in bandeja">
+              <ion-radio ng-model="filter.red">
+                 <div class="row">
+                  <div class="col">
+                    {{it.quantidade}} 
+                  </div>
+                  <div class="col">
+                    {{it.item.nome}}
+                  </div>
+                  <div class="col">
+                    {{it.valor}}
+                  </div>
+                  </div>
+              </ion-radio>
             </ion-list>
             <br />
-            <p><h-number value="input.quant" min="1" max="100" step="1"></h-number></p>
           </div>
           <div class="margem-imagem"></div>
         </div>
         <div class="bar bar-footer">
           <div class="button-bar">
-           <button class="button icon-right ion-checkmark button-positive"  ng-click="pedir()">Pedir</button>
-           <button class="button icon-right ion-checkmark button-assertive"  ng-click="fechaModal()">Cancelar</button>
+           <button class="button  button-positive"  ng-click="pedir()"><i class=" ion-ios-checkmark-outline"></i></button>
+           <button class="button  button-dark"  ng-click="pedir()"><i class="ion-edit"></i></button>
+           <button class="button"  ng-click="pedir()"><i class="ion-ios-trash-outline"></i></button>
+           <button class="button  button-assertive"  ng-click="fechaModal()"><i class="ion-ios-undo-outline"></i></button>
           </div>
         </div>
         </ion-content>
       </ion-modal-view>
     </script>
     <!-- Fim/Modal -->
-
-
 
 </ion-side-menus>

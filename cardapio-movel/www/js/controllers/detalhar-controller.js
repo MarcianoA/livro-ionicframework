@@ -28,7 +28,7 @@ app.controller('DetalharCtrl', function($scope, $stateParams, CardapioServices, 
 	});
 
 	$scope.pedir = function(){
-		Sessao.bandeja.push({item: $scope.item, quantidade : $scope.input.quant, valor: Number($scope.item.preco*$scope.input.quant)});
+		Sessao.bandeja.push({item: $scope.item, quantidade : $scope.input.quant, valor: $scope.item.preco*$scope.input.quant});
 		$scope.modal.hide();
 		$scope.input.quant = 1;
 	}
