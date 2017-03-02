@@ -39,7 +39,7 @@
   				{{item.descricao}}
   				</p>
   			</div>
-  			<p>Preço: R$ {{item.preco}}</p>
+  			<p>Preço: R$ {{item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}}</p>
   		</div>
     </div>
 

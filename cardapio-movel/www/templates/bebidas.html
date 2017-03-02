@@ -2,7 +2,7 @@
 	<ion-content>
 	    <ion-list>
 		     <ion-item ng-repeat="bebida in bebidas" href="#/app/detalhar/{{bebida.id}}">
-	        	{{bebida.nome}} - R$ {{bebida.preco}}
+	        	{{bebida.nome}} - {{bebida.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}}
 	     	 </ion-item>
 	    </ion-list>
     </ion-content>
