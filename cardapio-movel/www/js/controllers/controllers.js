@@ -53,5 +53,16 @@ app.controller('AppCtrl', function($scope, Sessao, $timeout, $ionicModal) {
 	}
 	//FIM/Inserção de Edição
 
+	//Remoção
+	$scope.removerItem = function(){
+		Sessao.bandeja.splice($scope.data.item,1);
+	}
+
+	$scope.pedir = function(){
+		Sessao.historicoPedidos = Sessao.historicoPedidos.concat(Sessao.bandeja);
+		Sessao.bandeja.splice(0,Sessao.bandeja.length);
+		$scope.modal.hide();
+	}
+
 
 });
