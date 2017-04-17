@@ -4,12 +4,21 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','ngNumberPicker'])
+angular.module('starter', ['ionic', 'starter.controllers','ngNumberPicker', 'ngCordova','firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
+      // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAV6AVt9iTDoa5Rla_xbrNO7EDjcRzSrmA",
+    authDomain: "livro-ionic.firebaseapp.com",
+    databaseURL: "https://livro-ionic.firebaseio.com"
+  };
+  firebase.initializeApp(config);
+
 
 
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -21,12 +30,19 @@ angular.module('starter', ['ionic', 'starter.controllers','ngNumberPicker'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+
+
   });
 })
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 
   $ionicConfigProvider.navBar.alignTitle('center');
+
+  
+
+
   
   $stateProvider
 
@@ -72,6 +88,24 @@ angular.module('starter', ['ionic', 'starter.controllers','ngNumberPicker'])
       views: {
         'menuContent': {
           templateUrl: 'templates/browse.html'
+        }
+      }
+  })
+  .state('app.camera', {
+      url: '/camera',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/camera.html',
+          controller : 'CameraCtrl'
+        }
+      }
+  })
+  .state('app.conta', {
+      url: '/conta',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/conta.html',
+          controller : 'ContaCtrl'
         }
       }
  

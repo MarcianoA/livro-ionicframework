@@ -1,8 +1,7 @@
 var app = angular.module('starter.controllers', []);
 
-app.controller('AppCtrl', function($scope, Sessao, $timeout, $ionicModal) {
+app.controller('AppCtrl', function($scope, Sessao, $ionicModal, $cordovaDialogs) {
 	$scope.bandeja = Sessao.bandeja;
-	
 	$scope.modal = {};
 
 	$scope.data = {};
@@ -55,14 +54,39 @@ app.controller('AppCtrl', function($scope, Sessao, $timeout, $ionicModal) {
 
 	//Remoção
 	$scope.removerItem = function(){
-		Sessao.bandeja.splice($scope.data.item,1);
+		$cordovaDialogs.confirm('Deseja realmente remover este item?', 'Remoção', ['Cancelar','OK'])
+    	.then(function(buttonIndex) {
+      	// Sem botão = 0, 'OK' = 1, 'Cancel' = 2
+      	var btnIndex = buttonIndex;
+      	if( btnIndex == 1){
+      		Sessao.bandeja.splice($scope.data.item,1);
+     	 }
+    });
+
+
+		
 	}
 
+	$scope.historicoPedidos = Sessao.historicoPedidos;
 	$scope.pedir = function(){
+		console.log($scope.historicoPedidos);
 		Sessao.historicoPedidos = Sessao.historicoPedidos.concat(Sessao.bandeja);
 		Sessao.bandeja.splice(0,Sessao.bandeja.length);
+		$scope.historicoPedidos = Sessao.historicoPedidos;
 		$scope.modal.hide();
 	}
 
+	$scope.conta = {};
+	$scope.conta.quantidadePessoa = 1;
+	$scope.calcularConta = function(){
+		$scope.conta.total = 0;
+		$scope.historicoPedidos.forEach(function(v){
+			$scope.conta.total = $scope.conta.total + v.valor;
+		})
+		$scope.conta.porcentagem = $scope.conta.total * 10/100;
+		$scope.conta.subtotal = $scope.conta.porcentagem + $scope.conta.total;
+	}
 
+
+	
 });
